@@ -19,7 +19,7 @@ function init(){
 			fs.mkdirSync(outputDir)
 		}
 
-		fs.writeFileSync(`${outputDir}/${demoFile}`, result, 'utf8')
+		fs.writeFileSync(`${outputDir}/index.html`, result, 'utf8')
 	} catch (error) {
 		console.log(error)
 	}	
