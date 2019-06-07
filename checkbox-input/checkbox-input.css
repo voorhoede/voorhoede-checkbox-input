@@ -1,0 +1,48 @@
+.checkbox-input {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.checkbox-input__input {
+	clip: rect(0 0 0 0);
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+}
+
+.checkbox-input__icon {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.checkbox-input__input:checked ~ .checkbox-input__indicator .checkbox-input__icon {
+	display: inline-block;
+}
+
+.checkbox-input__input:focus ~ .checkbox-input__indicator {
+	background-color: hsl(216, 10%, 60%);
+}
+
+.checkbox-input__indicator {
+	position: relative;
+	width: 100px;
+}
+
+.checkbox-input__indicator,
+.checkbox-input__input:checked ~ .checkbox-input__indicator {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #000;
+}
+
+.checkbox-input__text {
+	margin-left: 10px;
+}

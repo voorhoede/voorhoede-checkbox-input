@@ -1,0 +1,10 @@
+{
+  "name": "voorhoede-components-checkbox",
+  "version": "1.0.0",
+	"description": "A scalable and accessible custom checkbox input.",
+	"author": "De Voorhoede",
+	"license": "MIT",
+  "scripts": {
+    "build": "node build.js component=checkbox-input"
+  }
+}
