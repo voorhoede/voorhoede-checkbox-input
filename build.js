@@ -28,8 +28,7 @@ function init(){
 function componentArgument() {
 	const splitOnEqual = process.argv[2].split('=')
 	if (!(process.argv[2] && splitOnEqual.length === 2 && splitOnEqual[0] === 'component' && splitOnEqual[1])) {
-		console.log('Argument \'component\' is required. E.g.: node build.js component=checkbox-input')
-		return
+		throw new Error('Argument \'component\' is required. E.g.: node build.js component=checkbox-input')
 	}
 
 	return splitOnEqual[1]
