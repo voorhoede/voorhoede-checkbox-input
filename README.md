@@ -18,4 +18,3 @@ View the [demo](https://voorhoede-checkbox-input.netlify.com/).
 Component has been tested on:
 
 * [MacOS VoiceOver in Safari](https://www.youtube.com/watch?v=5R-6WvAihms)
-* 
