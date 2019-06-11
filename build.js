@@ -8,28 +8,28 @@ const componentName = componentArgument()
 init()
 
 function init(){
-	try {
-		const componentFile = fs.readFileSync(`${componentName}/${componentName}.html`, 'utf8')
-		const stylesFile = fs.readFileSync(`${componentName}/${componentName}.css`, 'utf8')
-		const demoContent = fs.readFileSync(demoFile, 'utf8')
-		const replaceHtml = demoContent.replace(componentRegex, componentFile)
-		const result = replaceHtml.replace(stylesRegex, stylesFile)
+  try {
+    const componentFile = fs.readFileSync(`${componentName}/${componentName}.html`, 'utf8')
+    const stylesFile = fs.readFileSync(`${componentName}/${componentName}.css`, 'utf8')
+    const demoContent = fs.readFileSync(demoFile, 'utf8')
+    const replaceHtml = demoContent.replace(componentRegex, componentFile)
+    const result = replaceHtml.replace(stylesRegex, stylesFile)
 
-		if (!fs.existsSync(outputDir)) {
-			fs.mkdirSync(outputDir)
-		}
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir)
+    }
 
-		fs.writeFileSync(`${outputDir}/index.html`, result, 'utf8')
-	} catch (error) {
-		console.log(error)
-	}	
+    fs.writeFileSync(`${outputDir}/index.html`, result, 'utf8')
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 function componentArgument() {
-	const splitOnEqual = process.argv[2].split('=')
-	if (!(process.argv[2] && splitOnEqual.length === 2 && splitOnEqual[0] === 'component' && splitOnEqual[1])) {
-		throw new Error('Argument \'component\' is required. E.g.: node build.js component=checkbox-input')
-	}
+  const splitOnEqual = process.argv[2].split('=')
+  if (!(process.argv[2] && splitOnEqual.length === 2 && splitOnEqual[0] === 'component' && splitOnEqual[1])) {
+    throw new Error('Argument \'component\' is required. E.g.: node build.js component=checkbox-input')
+  }
 
-	return splitOnEqual[1]
+  return splitOnEqual[1]
 }
